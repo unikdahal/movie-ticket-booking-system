@@ -10,3 +10,7 @@
 	path = movie-services-registry
 	url = https://github.com/unikdahal/movie-services-registry.git
 	branch=main
+[submodule "notification-service"]
+	path = notification-service
+	url = https://github.com/unikdahal/notification-service.git
+	branch=main
