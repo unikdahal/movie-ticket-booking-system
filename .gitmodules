@@ -1,0 +1,9 @@
+[submodule "booking-service"]
+	path = booking-service
+	url = https://github.com/unikdahal/booking-service.git
+[submodule "payment-service"]
+	path = payment-service
+	url = https://github.com/unikdahal/payment-service.git
+[submodule "movie-services-registry"]
+	path = movie-services-registry
+	url = https://github.com/unikdahal/movie-services-registry.git
