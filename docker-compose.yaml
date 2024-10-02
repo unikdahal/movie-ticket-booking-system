@@ -30,4 +30,16 @@ services:
       - server.port=9090
       - eureka.client.register-with-eureka=true
       - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "7070:7070"
+    environment:
+      - spring.application.name=notification-service
+      - server.port=7070
+      - eureka.client.register-with-eureka=true
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+
+
 
