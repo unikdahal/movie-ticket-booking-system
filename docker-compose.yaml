@@ -6,40 +6,40 @@ services:
     ports:
       - "8761:8761"
     environment:
-      - server.port=8761
-      - spring.application.name=movie-services-registry
-      - eureka.client.register-with-eureka=false
-      - eureka.client.fetch-registry=false
+      - SERVER_PORT=8761
+      - APPLICATION_NAME=movie-services-registry
+      - REGISTER_WITH_EUREKA=false
+      - FETCH_REGISTRY=false
   booking-service:
     build: ./movie-services-registry
     container_name: booking-service
     ports:
       - "8080:8080"
     environment:
-      - spring.application.name=booking-service
-      - server.port=8761
-      - eureka.client.register-with-eureka=true
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+      - APPLICATION_NAME=booking-service
+      - SERVER_PORT=8761
+      - REGISTER_WITH_EUREKA=true
+      - DEFAULT_ZONE=http://eureka-server:8761/eureka/
   payment-service:
     build: ./payment-service
     container_name: payment-service
     ports:
       - "9090:9090"
     environment:
-      - spring.application.name=payment-service
-      - server.port=9090
-      - eureka.client.register-with-eureka=true
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+      - APPLICATION_NAME=payment-service
+        SERVER_PORT=9090
+      - REGISTER_WITH_EUREKA=true
+      - DEFAULT_ZONE=http://eureka-server:8761/eureka/
   notification-service:
     build: ./notification-service
     container_name: notification-service
     ports:
       - "7070:7070"
     environment:
-      - spring.application.name=notification-service
-      - server.port=7070
-      - eureka.client.register-with-eureka=true
-      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
+      - APPLICATION_NAME=notification-service
+      - SERVER_PORT=7070
+      - REGISTER_WITH_EUREKA=true
+      - DEFAULT_ZONE=http://eureka-server:8761/eureka/
 
 
 

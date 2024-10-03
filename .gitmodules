@@ -14,3 +14,6 @@
 	path = notification-service
 	url = https://github.com/unikdahal/notification-service.git
 	branch=main
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/unikdahal/api-gateway.git
