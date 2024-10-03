@@ -24,7 +24,7 @@ services:
     build: ./payment-service
     container_name: payment-service
     ports:
-      - "9090:9090"
+      - "8081:8081"
     environment:
       - APPLICATION_NAME=payment-service
         SERVER_PORT=9090
@@ -38,6 +38,16 @@ services:
     environment:
       - APPLICATION_NAME=notification-service
       - SERVER_PORT=7070
+      - REGISTER_WITH_EUREKA=true
+      - DEFAULT_ZONE=http://eureka-server:8761/eureka/
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8765:8765"
+    environment:
+      - APPLICATION_NAME=api-gateway
+      - SERVER_PORT=8765
       - REGISTER_WITH_EUREKA=true
       - DEFAULT_ZONE=http://eureka-server:8761/eureka/
 
